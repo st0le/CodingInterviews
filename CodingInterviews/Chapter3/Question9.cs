@@ -11,10 +11,10 @@ namespace CodingInterviews.Chapter3
          * outputs “We%20are%20happy.” if the input is “We are happy.”.
          */
 
-        public char[] ReplaceBlanks(char[] arr)
+        public char[] ReplaceBlanks(char[] arr, int oldLen)
         {
-            int newLen = 0, oldLen = 0;
-            for (int i = 0; arr[i] != 0; i++, oldLen++)
+            int newLen = 0;
+            for (int i = 0; i < oldLen; i++)
             {
                 if (arr[i] == ' ')
                 {
@@ -43,6 +43,20 @@ namespace CodingInterviews.Chapter3
             return arr;
         }
 
+        public char[] RemoveBlanks(char[] arr, int oldLen)
+        {
+
+            for(int i = 0, j = 0; i < oldLen; i++)
+            {
+                if(arr[i] != ' ')
+                {
+                    arr[j++] = arr[i];
+                }
+            }
+
+            return arr;
+        }
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -51,9 +65,22 @@ namespace CodingInterviews.Chapter3
             for (int i = 0; i < s.Length; i++)
                 arr[i] = s[i];
 
-            arr = ReplaceBlanks(arr);
+            arr = ReplaceBlanks(arr, s.Length);
             string res = new string(arr);
             Assert.IsTrue(res.StartsWith("We%20are%20happy."));
+        }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            char[] arr = new char[30];
+            string s = "We are happy.";
+            for (int i = 0; i < s.Length; i++)
+                arr[i] = s[i];
+
+            arr = RemoveBlanks(arr, s.Length);
+            string res = new string(arr);
+            Assert.IsTrue(res.StartsWith("Wearehappy."));
         }
     }
 }

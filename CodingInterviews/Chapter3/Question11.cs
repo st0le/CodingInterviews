@@ -1,9 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodingInterviews.Chapter3
 {
@@ -18,8 +13,6 @@ namespace CodingInterviews.Chapter3
             the pattern “aa.a” nor “ab*a”.
          */
 
-
-
         public bool Match(string hay, string needle)
         {
             return Match(hay.ToCharArray(), 0, needle.ToCharArray(), 0);
@@ -32,13 +25,12 @@ namespace CodingInterviews.Chapter3
 
             if (i == hay.Length) return false;
 
-
             if (j + 1 < needle.Length && needle[j + 1] == '*')
             {
                 if (hay[i] == needle[j] || needle[j] == '.')
                 {
-                    return Match(hay, i + 1, needle, j + 2) 
-                        || Match(hay, i + 1, needle, j) 
+                    return Match(hay, i + 1, needle, j + 2)
+                        || Match(hay, i + 1, needle, j)
                         || Match(hay, i, needle, j + 2);
                 }
                 else

@@ -52,6 +52,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Chapter3\LLNode.cs" />
     <Compile Include="Chapter3\Question11.cs" />
     <Compile Include="Chapter3\Question5.cs" />
     <Compile Include="Chapter3\Question6.cs" />
@@ -59,6 +60,9 @@
     <Compile Include="Chapter3\Question8.cs" />
     <Compile Include="Chapter3\Question9.cs" />
     <Compile Include="Chapter3\Question10.cs" />
+    <Compile Include="Chapter3\Question13.cs" />
+    <Compile Include="Chapter3\Question14.cs" />
+    <Compile Include="Chapter3\Question15.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Choose>
