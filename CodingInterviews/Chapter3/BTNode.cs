@@ -38,7 +38,7 @@ namespace CodingInterviews.Chapter3
 
         public override string ToString()
         {
-            return string.Format("({1}-{0}-{2})", this.Data, this.Left, this.Right);
+            return string.Format("({1} {0} {2})", this.Data, this.Left != null ? this.Left.ToString() : "NULL", this.Right != null ? this.Right.ToString() : "NULL");
         }
     }
 }

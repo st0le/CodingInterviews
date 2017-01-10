@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Text;
+using System.Collections.Generic;
 
 namespace CodingInterviews.Chapter3
 {
@@ -29,6 +31,7 @@ namespace CodingInterviews.Chapter3
 
         public BTNode NextInorder(BTNode node)
         {
+            if (node == null) return null;
             BTNode next = null;
             if (node.Right != null)
             {
